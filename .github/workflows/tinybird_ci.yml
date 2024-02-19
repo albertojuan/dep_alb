@@ -18,7 +18,7 @@
 
     jobs:
         ci: # ci using branches from workspace 'dep_alb'
-          uses: tinybirdco/ci/.github/workflows/ci.yml@v2.5.1
+          uses: tinybirdco/ci/.github/workflows/ci.yml@v3.1.0
           with:
             tb_deploy: false
             data_project_dir: .

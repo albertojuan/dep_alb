@@ -14,7 +14,7 @@
           - master
     jobs:
       cd:  # deploy changes to workspace 'dep_alb'
-        uses: tinybirdco/ci/.github/workflows/cd.yml@v2.5.1
+        uses: tinybirdco/ci/.github/workflows/cd.yml@v3.1.0
         with:
           tb_deploy: false
           data_project_dir: .

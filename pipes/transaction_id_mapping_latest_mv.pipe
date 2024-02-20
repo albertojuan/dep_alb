@@ -1,6 +1,5 @@
 NODE latest_transaction_product_id_mapping
 SQL >
-
     SELECT
         merchant,
         transaction_product_id,
@@ -8,11 +7,7 @@ SQL >
         argMaxState(main_product_id, timestamp) AS main_product_id,
         argMaxState(product_id, timestamp) AS product_id
     FROM product_id_mapping
-    GROUP BY
-        merchant,
-        transaction_product_id
+    GROUP BY merchant, transaction_product_id
 
-TYPE materialized
+TYPE MATERIALIZED
 DATASOURCE transaction_id_mapping_latest
-
-

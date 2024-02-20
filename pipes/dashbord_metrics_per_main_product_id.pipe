@@ -20,7 +20,7 @@ SQL >
         date(timestamp) as date,
         currency,
         market
-    FROM purchase
+    FROM purchase__v1
     WHERE
         merchant = {{ String(merchant, "chimi") }}
         AND Date(timestamp) >= {{ Date(from_date, "2024-01-09") }}
@@ -77,7 +77,7 @@ SQL >
     WITH
         invetory_per_main_product_id as (
             SELECT merchant, main_product_id, timestamp, sum(quantity) as quantity
-            FROM inventory_attributes
+            FROM inventory_attributes__v3
             where
                 merchant = {{ String(merchant, "chimi") }}
                 and inventory_id = {{ String(inventory_id, "SE_2") }}

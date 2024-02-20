@@ -19,7 +19,7 @@ SQL >
         array_transaction_product_id as transaction_product_id,
         any (array_quantity) as quantity,
         any (array_price) as price
-    FROM purchase ARRAY
+    FROM purchase__v1 ARRAY
     JOIN
         prices as array_price,
         quantities as array_quantity,

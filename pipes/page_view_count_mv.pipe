@@ -4,7 +4,7 @@ DESCRIPTION >
 
 SQL >
     SELECT toDate(timestamp) AS viewed_date, merchant, product_id, uniqState(device_id) AS views
-    FROM product_page_view
+    FROM product_page_view__v1
     GROUP BY viewed_date, merchant, product_id
 
 TYPE MATERIALIZED

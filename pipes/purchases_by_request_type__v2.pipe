@@ -48,7 +48,7 @@ SQL >
         any (array_quantity) as quantity,
         any (array_price) as price,
         any (group_id) as group_id
-    FROM purchase ARRAY
+    FROM purchase__v1 ARRAY
     JOIN
         prices as array_price,
         quantities as array_quantity,
@@ -65,7 +65,7 @@ NODE clicked_products
 SQL >
     %
     SELECT device_id, request_id, request_type, timestamp, any (group_id) as group_id
-    FROM click
+    FROM click__v2
     INNER JOIN latest_product_id_mapping USING product_id
     WHERE
         merchant = {{ String(merchant, "lexington") }}

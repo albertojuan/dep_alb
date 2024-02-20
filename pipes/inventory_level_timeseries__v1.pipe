@@ -6,7 +6,7 @@ SQL >
     WITH
         inventory_per_main_product_id as (
             SELECT merchant, main_product_id, timestamp, sum(quantity) as q
-            FROM inventory_attributes
+            FROM inventory_attributes__v3
             WHERE
                 merchant = {{ String(merchant, "chimi") }}
                 AND Date(timestamp) >= {{ Date(from_date, "2024-01-01") }}

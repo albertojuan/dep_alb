@@ -15,7 +15,7 @@ SQL >
         day,
         uniqMerge(unique_devices) as num_distinct_device_ids,
         uniqMerge(unique_clicks) as daily_clicks
-    FROM plp_product_click_counts_daily
+    FROM plp_product_click_counts_daily__v2
     WHERE
         merchant ={{ String(merchant, 'stronger') }}
         AND day >= {{ Date(from_date, "2023-11-15") }}

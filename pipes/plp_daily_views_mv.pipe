@@ -12,7 +12,7 @@ SQL >
         coalesce(collection_id, '') AS collection_id,
         toDate(timestamp) AS date,
         uniqState(device_id) AS unique_views
-    FROM product_listing
+    FROM product_listing__v2
     WHERE collection_id IS NOT NULL
     GROUP BY merchant, market, collection_id, date
 

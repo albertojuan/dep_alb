@@ -7,7 +7,7 @@ NODE click_device_ids
 SQL >
     %
     SELECT DISTINCT device_id
-    FROM click
+    FROM click__v2
     WHERE
         timestamp > timestamp_sub(HOUR, {{ Int32(last_n_hours, 24) }}, now())
         AND merchant = {{ String(merchant, "stronger") }}
@@ -16,7 +16,7 @@ NODE add_to_cart_device_ids
 SQL >
     %
     SELECT DISTINCT device_id
-    FROM add_to_cart
+    FROM add_to_cart__v1
     WHERE
         timestamp > timestamp_sub(HOUR, {{ Int32(last_n_hours, 24) }}, now())
         AND merchant = {{ String(merchant, "stronger") }}
@@ -25,7 +25,7 @@ NODE purchase_device_ids
 SQL >
     %
     SELECT DISTINCT device_id
-    FROM purchase
+    FROM purchase__v1
     WHERE
         timestamp > timestamp_sub(HOUR, {{ Int32(last_n_hours, 24) }}, now())
         AND merchant = {{ String(merchant, "stronger") }}

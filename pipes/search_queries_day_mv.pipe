@@ -15,7 +15,7 @@ SQL >
         tumbleStart(toDateTime(timestamp), toIntervalSecond(15)) AS timeslot,
         argMax(cleaned_query, length(cleaned_query)) AS query,
         argMax(length(product_ids) + length(content_urls), length(cleaned_query)) AS result_count
-    FROM search
+    FROM search__v3
     WHERE cleaned_query <> ''
     GROUP BY merchant, locale, search_language, device_id, market, timeslot
 

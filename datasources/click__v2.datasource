@@ -1,6 +1,5 @@
 TOKEN "data append token" APPEND
 
-
 SCHEMA >
     `timestamp` DateTime64(3) `json:$.timestamp`,
     `merchant` String `json:$.merchant`,
@@ -11,6 +10,6 @@ SCHEMA >
     `market` String `json:$.market`,
     `request_id` UUID `json:$.request_id`
 
-ENGINE "MergeTree"
-ENGINE_PARTITION_KEY "toYYYYMM(timestamp)"
-ENGINE_SORTING_KEY "merchant, request_type, request_query, device_id, product_id"
+ENGINE MergeTree
+ENGINE_PARTITION_KEY toYYYYMM(timestamp)
+ENGINE_SORTING_KEY merchant, request_type, request_query, device_id, product_id

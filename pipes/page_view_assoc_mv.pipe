@@ -8,7 +8,7 @@ SQL >
         PV.merchant AS merchant,
         PV.device_id AS device_id,
         PV.product_id AS product_id
-    FROM product_page_view AS PV
+    FROM product_page_view__v1 AS PV
     WHERE Length(PV.product_id) > 0
     GROUP BY viewed_date, merchant, device_id, product_id
 

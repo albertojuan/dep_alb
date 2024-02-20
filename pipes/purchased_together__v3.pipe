@@ -10,7 +10,7 @@ DESCRIPTION >
 SQL >
     %
     SELECT transaction_id, argMin(transaction_product_ids, timestamp) AS transaction_product_ids
-    FROM purchase
+    FROM purchase__v1
     WHERE
         merchant = {{ String(merchant, "equestrian") }}
         AND Date(timestamp) >= {{ Date(from_date, "2023-08-01") }}

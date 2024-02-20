@@ -12,9 +12,9 @@ SQL >
         toDate(C.timestamp) AS day,
         uniqState(C.device_id) AS unique_devices,
         uniqState(C.device_id, C.product_id) AS unique_clicks
-    FROM click AS C
+    FROM click__v2 AS C
     WHERE (C.request_type = 'product_listing') AND (Length(C.request_query) > 0)
     GROUP BY merchant, market, collection_id, day
 
 TYPE MATERIALIZED
-DATASOURCE plp_product_click_counts_daily
+DATASOURCE plp_product_click_counts_daily__v2

@@ -9,7 +9,7 @@ SQL >
         request_type,
         toDate(timestamp) AS date,
         uniqState(request_id, product_id) AS clicks
-    FROM click
+    FROM click__v2
     GROUP BY merchant, market, request_type, date
     ORDER BY date ASC, market ASC, request_type ASC
 

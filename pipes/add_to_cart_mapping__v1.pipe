@@ -15,7 +15,7 @@ SQL >
             WHEN length(PM.product_id) >= 1
             THEN PM.product_id
             ELSE NULL END AS catalog_product_id
-            FROM add_to_cart AS PA
+            FROM add_to_cart__v1 AS PA
             LEFT OUTER JOIN
                 product_id_mapping_latest AS PM
                 ON PA.product_id = PM.product_id
